@@ -1,0 +1,12 @@
+.revealAnimationSettings {
+  opacity: 0;
+  transform: translateY(-16px);
+  transition: 350ms var(--animationStyle);
+  transition-property: opacity, transform;
+}
+
+.revealAnimationOpacity {
+  opacity: 0;
+  transition: 500ms var(--animationStyle);
+  transition-property: opacity;
+}

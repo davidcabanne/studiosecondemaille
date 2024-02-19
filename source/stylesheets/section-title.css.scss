@@ -1,0 +1,36 @@
+.sectionHeader {
+    height: 128px;
+    border: var(--border-styles);
+    border-top: none;
+
+    @media (max-width: 768px) {
+        border-bottom: none;
+    }
+}
+
+.bgLight {
+    background: var(--light-010);
+    color: var(--primary);
+}
+
+.bgLight a span svg {
+    fill: var(--primary);
+}
+
+.bgPrimary {
+    background: var(--primary);
+    color: var(--light-010);
+}
+
+.bgPrimary a span svg {
+    fill: var(--light-010);
+}
+
+.sectionTitleContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-transform: uppercase;
+    padding: var(--marginS);
+}

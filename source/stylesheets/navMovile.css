@@ -1,0 +1,118 @@
+
+.navMobile {
+    display: none;
+}
+
+.menuIcon {
+    display: none;
+    cursor: pointer;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeActive {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navMobile {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgb(83, 61, 245, 0.9);
+        backdrop-filter: blur(10px);
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0;
+        transition: 200ms var(--animationStyle);
+        transition-property: opacity;
+        transition-delay: 150ms;
+    }
+
+    .navMobileActive {
+        pointer-events: auto;
+        opacity: 1;
+        transition-delay: 50ms;
+    }
+
+    .navMobileUl {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: start;
+        gap: var(--marginM);
+        padding: 64px var(--marginM);
+    }
+
+    .navMobileUl > li > .navLink {
+        color: var(--secondary);
+        font-size: clamp(40px, 7vw, 72px);
+        text-transform: uppercase;
+    }
+
+    .navMobileUl > li {
+        opacity: 0;
+        transition: 200ms var(--animationStyle);
+        transition-property: opacity, transform;
+    }
+
+    .navMobileUl > .selected > a {
+        border-bottom: 3px solid var(--secondary);
+    }
+
+    .navMobileUl > .selectedCart > a {
+        padding-bottom: 8px;
+    }
+
+    .navMobileSocials {
+        color: var(--secondary);
+        text-decoration: underline;
+        text-transform: uppercase;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 64px;
+    }
+
+    .menuIcon {
+        display: block;
+        color: var(--primary);
+        border-bottom: 1px solid transparent;
+        animation: fade 600ms alternate var(--animationStyle);
+    }
+
+    .menuIconActive {
+        color: var(--secondary);
+        border-bottom: 1px solid var(--secondary);
+        animation: fadeActive 300ms alternate var(--animationStyle);
+    }
+
+    .header-span {
+        color: var(--primary);
+        transition: color 600ms var(--animationStyle);
+    }
+
+    .header-spanActive {
+        color: var(--secondary);
+        transition: color 300ms var(--animationStyle);
+    }
+}
