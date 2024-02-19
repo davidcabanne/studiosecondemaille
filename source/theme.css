@@ -17,7 +17,6 @@
 /*
  *
     *= require stylesheets/var
-    *= require stylesheets/_breakpoints
     *= require stylesheets/app
     *= require stylesheets/layout
     *= require stylesheets/typefaces
