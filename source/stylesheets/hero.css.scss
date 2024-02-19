@@ -1,0 +1,55 @@
+.hero {
+    height: calc(100vh - (var(--headerHeight) - 2px));
+    height: calc(100svh - (var(--headerHeight) - 2px));
+    margin-top: calc(var(--headerHeight) - 2px);
+    background: var(--primary);
+}
+
+.heroPlaceholder {
+    width: 100%;
+    height: inherit;
+    border: var(--border-styles);
+    border-right: 1px solid var(--border);
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.heroPanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--marginS);
+    background: var(--primary);
+    border: var(--border-styles);
+
+    & h1 {
+        color: var(--light-010);
+        text-transform: uppercase;
+    }
+
+    & .heroPanelStart {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    & .heroPanelEnd {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    & .heroPanelCenter {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+        position: absolute;
+        inset: 0;
+        background: none;
+    }
+}

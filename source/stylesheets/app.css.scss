@@ -1,0 +1,89 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default margin */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'],
+ul,
+li {
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    position: relative;
+    width: 100vw;
+    width: 100dvw;
+    /* RESPONSIVE HEIGHT FALLBACK for iOS tool bar */
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: -webkit-fill-available;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--primary);
+    background: var(--primary);
+    overflow-x: hidden;
+}
+
+.bodyActive {
+    overflow: hidden;
+}
+
+/* A elements that don't have a class get default styles */
+a,
+a:visited,
+a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:not([class]) {
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr minmax(386px, 1fr);
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}

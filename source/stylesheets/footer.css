@@ -1,0 +1,37 @@
+footer {
+  position: relative;
+  width: 100%;
+  padding: var(--marginL) var(--marginM);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--marginM);
+  background: var(--primary900);
+}
+.footerContactPannel a {
+  width: max-content;
+  font-weight: 500;
+  color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: color 100ms ease-in-out;
+}
+.footerContactPannel a .footerContactMail {
+  text-decoration: underline;
+}
+.footerContactPannel a:hover {
+  color: var(--danger);
+}
+.footerNav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+.footerNav li > a {
+  font-weight: 500;
+  color: var(--secondary);
+  transition: color 100ms ease-in-out;
+}
+.footerNav li > a:hover {
+  color: var(--danger);
+}
