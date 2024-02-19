@@ -1,0 +1,56 @@
+<div class="modal">
+  <div class="modal-container">
+    <div class="modal-wrapper">
+      <button class="modal-btn">close</button>
+      <img class="modal-img" src="" />
+    </div>
+  </div>
+</div>
+
+<section class="product_images section productSection">
+
+  <div class="productContainer">
+    <div class="productImagesContainer revealContainer">
+        {% for image in product.images %}
+             <img class="lazy primary_image revealAnimationSettings" src="{{ image | product_image_url }}" loading="lazy" alt="Image of {{ product.name | escape }}">
+        {% endfor %}
+    </div>
+
+    <aside class="productDetails revealContainer">
+      <div class="stickyContent revealAnimationOpacity">
+      <h2>{{ product.name }}</h2>
+
+      <div class="productDefaultPrice">
+        {% case product.status %} {% when 'sold-out' %}
+        <h5>{{ product.default_price | money_with_sign }} <em>Sold Out</em></h5>
+
+        {% when 'coming-soon' %}
+        <h5>
+          {{ product.default_price | money_with_sign }} <em>Coming Soon</em>
+        </h5>
+
+        {% when 'active' %}
+        <h5>
+          {{ product.default_price | money_with_sign }}{% if product.on_sale %}
+          <em>On Sale{% endif %}</em>
+        </h5>
+      </div>
+
+      {% if product.description != blank %}
+        {{ product.description | paragraphs }}
+      {% endif %}
+
+      <form method="post" action="/cart" class="productForm">
+        {% if product.has_default_option %} {{ product.option |
+        hidden_option_input }} {% else %}
+        <div class="productFormSelect">{{ product.options_in_stock | options_select }}</div>
+        {% endif %}
+        <button name="submit" type="submit" title="Add to Cart">
+          Add to Cart
+        </button>
+      </form>
+      {% endcase %}
+    </aside>
+    <div class="productSpacer"></div>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+<section class="section cartSection">
+  {% if cart.items != blank %}
+  <div class="cartGroupContainer flexCenter">
+    <div class="cartGroupWrapper cartGroupWidth">
+      <h3 class="cartItems">Your cart</h3>
+      <span class="cartItemCount">{{ cart.item_count }}</span>
+    </div>
+  </div>
+
+  <form class="cartForm" method="post" action="/cart">
+    <div class="cartGroupContainer cartGroupMargin">
+      <div class="cartGroupWrapper">
+        <ul class="unstyled cartProductsContainer">
+          {% for item in cart.items %}
+          <li class="cartProductPannel">
+            <div class="cartProduct">
+              <a href="{{ item.product.url }}">
+                <img class="cartProductImg" src="{{ item.product.image |
+                product_image_url size:"small" }}">
+              </a>
+              <div class="cartProductDetails">
+                <a class="cartProductTitle" href="{{ item.product.url }}">
+                  <span class="productName"> {{ item.product.name }} </span>
+                  <span>
+                    {% unless item.product.has_default_option %}
+                    <span>Option:</span>
+                    {{item.option.name }} {% endunless %}
+                  </span>
+                </a>
+                <div class="cartProductQuantity">
+                  <button class="cartProductQuantityButton buttonDecrement">
+                    -
+                  </button>
+                  <div class="cartProductItemQtyInput">
+                    {{ item | item_quantity_input }}
+                  </div>
+                  <button class="cartProductQuantityButton buttonIncrement">
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="cartProductDetails cartProductDetailsMargin">
+              <a href="#" class="remove removeActionContainer">
+                <span class="removeActionDetail">Remove item</span>
+                <p class="removeActionContainer">&times;</p>
+              </a>
+              <div class="cartProductPrice">
+                <p>{{ item.price | money_with_sign }}</p>
+                <p>Shipping: {{item.shipping}}</p>
+              </div>
+            </div>
+          </li>
+
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="cartGroupContainer flexCenter">
+      <div class="cartGroupWrapper cartGroupCheckout cartGroupWidth">
+        <div>
+          <p>Subtotal:</p>
+          <span>{{ cart.subtotal | money_with_sign }}</span>
+        </div>
+        <button type="submit" name="checkout" title="Checkout">Checkout</button>
+      </div>
+    </div>
+  </form>
+
+  {% else %}
+
+  <div class="cartGroupContainer flexCenter">
+    <div class="cartGroupEmpty">
+      <h3 class="cartItems cartShopList">
+        <a href="/products"
+          >Your cart is empty! Sounds like a good time to
+          <span class="cartShopLink">start shopping</span></a
+        >
+        <span class="cartShopArrow">&rarr;</span>
+      </h3>
+    </div>
+  </div>
+
+  {% endif %}
+</section>
