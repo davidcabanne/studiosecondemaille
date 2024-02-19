@@ -1,0 +1,40 @@
+/* ------------------------------------------------------------------------------------------------
+ *
+ * This is where all of the CSS code is handled for your theme.
+ *
+ * We recommend you break your CSS into multiple files and put them in a separate
+ * directory. We've used a "stylesheets" directory in our example below. After that we'll use
+ * Sprockets (getsprockets.org) to package them into one file. Sprockets also allows you to
+ * use Sass/SCSS (sass-lang.com) by ending your file name with .sass or .scss, and you can also
+ * use LESS (lesscss.org) by ending your file with .less.
+ *
+ * However, if you don't have much CSS, or you're just a glutton for punishment,
+ * you could simply put all of your CSS in this file. It's up to you.
+ *
+ * ------------------------------------------------------------------------------------------------
+ */
+
+/*
+ *
+    *= require stylesheets/var
+    *= require stylesheets/_breakpoints
+    *= require stylesheets/app
+    *= require stylesheets/layout
+    *= require stylesheets/typefaces
+    *= require stylesheets/reveal
+    *= require stylesheets/buttons
+    *= require stylesheets/section
+    *= require stylesheets/header
+    *= require stylesheets/hero
+    *= require stylesheets/section-title
+    *= require stylesheets/section-featured
+    *= require stylesheets/section-workshops
+    *= require stylesheets/tab
+    *= require stylesheets/products
+    *= require stylesheets/product
+    *= require stylesheets/contact
+    *= require stylesheets/cart
+    *= require stylesheets/footer
+    *= require stylesheets/about
+  *
+ */
