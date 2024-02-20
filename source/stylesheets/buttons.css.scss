@@ -1,63 +1,69 @@
 button {
-    background: var(--primary);
-    border: none;
-    width: 100%;
-    color: var(--light-010);
-    text-transform: uppercase;
-    cursor: pointer;
+  background: var(--primary);
+  border: none;
+  width: 100%;
+  color: var(--light-010);
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .buttonLink {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    text-transform: uppercase;
-    font-weight: 500;
-    cursor: pointer;
-    padding: var(--marginS);
-    border-left: var(--border-styles);
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  padding: var(--marginS);
+  border-left: var(--border-styles);
 
-    @media (max-width: 768px) {
-        border: none;
-    }
+  @media (max-width: 768px) {
+    border: none;
+  }
 }
 
 .buttonWorkshop {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    text-transform: uppercase;
-    font-weight: 500;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 100ms ease-in-out;
+  transition-property: opacity;
 
-    @media (min-width: 768px) {
-        &:hover {
-            opacity: 0.75;
-        }
+  @media (min-width: 768px) {
+    &:hover {
+      opacity: 0.75;
     }
+  }
 }
 
 .buttonLink {
-    & span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: var(--marginXS);
+  & span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--marginXS);
 
-        & svg {
-            fill: var(--primary);
-        }
+    & svg {
+      fill: var(--primary);
+      transition: 100ms ease-in-out;
+      transition-property: fill;
     }
+  }
+  transition: 100ms ease-in-out;
+  transition-property: background, color;
 
-    @media (min-width: 768px) {
-        &:hover {
-            color: var(--light-010);
-            background: var(--light-001);
+  @media (min-width: 768px) {
+    &:hover {
+      color: var(--light-010);
+      background: var(--light-001);
 
-            & span > svg {
-                fill: var(--light-010);
-            }
-        }
+      & span > svg {
+        fill: var(--light-010);
+      }
     }
+  }
 }

@@ -1,118 +1,124 @@
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--headerHeight);
-    background: var(--light-010);
-    border: var(--border-styles);
-    z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--headerHeight);
+  background: var(--light-010);
+  border: var(--border-styles);
+  z-index: 99;
 }
 
 .header-logo {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    font-size: 16px;
-    text-transform: uppercase;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 16px;
+  text-transform: uppercase;
 
-    & a {
-        padding-left: var(--marginS);
-    }
+  & a {
+    padding-left: var(--marginS);
+  }
 }
 
 nav {
-    display: grid;
-    grid-template-columns: 1fr 64px;
+  display: grid;
+  grid-template-columns: 1fr 64px;
 
-    @media screen and (max-width: 768px) {
-        display: none !important;
-    }
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
 }
 
 .nav-ul {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .nav-ul li {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+  transition-property: background, color;
 }
 
 .nav-ul li:nth-child(1),
 .nav-ul li:nth-child(2) {
-    box-sizing: content-box;
-    border-left: var(--border-styles);
-    border-bottom: var(--border-half);
+  box-sizing: content-box;
+  border-left: var(--border-styles);
+  border-bottom: var(--border-half);
 }
 .nav-ul li:nth-child(3),
 .nav-ul li:nth-child(4) {
-    box-sizing: content-box;
-    border-left: var(--border-styles);
-    border-top: var(--border-half);
+  box-sizing: content-box;
+  border-left: var(--border-styles);
+  border-top: var(--border-half);
 }
 
 .nav-ul li a {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding-left: var(--marginS);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: var(--marginS);
 }
 
 @media screen and (min-width: 768px) {
-    .nav-ul li:hover {
-        color: var(--light-010);
-        background: var(--light-001);
-    }
+  .nav-ul li:hover {
+    color: var(--light-010);
+    background: var(--light-001);
+  }
 }
 
 nav .selected {
-    color: var(--light-010);
-    background: var(--primary);
+  color: var(--light-010);
+  background: var(--primary);
 }
 nav .selected svg {
-    stroke: var(--light-010);
-    background: var(--primary);
+  stroke: var(--light-010);
+  background: var(--primary);
 }
 
 .navLink {
-    position: relative;
+  position: relative;
 }
 
 nav div {
-    height: 100%;
-    width: var(--marginXL);
+  height: 100%;
+  width: var(--marginXL);
 }
 
 .cart-link-item {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: content-box;
-    border-left: var(--border-styles);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  border-left: var(--border-styles);
+  transition: 100ms ease-in-out;
+  transition-property: background;
 }
 
 .cart-link-item svg {
-    stroke: var(--primary);
+  stroke: var(--primary);
+  transition: 100ms ease-in-out;
+  transition-property: stroke;
 }
 
 @media screen and (min-width: 768px) {
-    .cart-link-item:hover {
-        background: var(--light-001);
-    }
-    .cart-link-item:hover svg {
-        stroke: var(--light-010);
-    }
+  .cart-link-item:hover {
+    background: var(--light-001);
+  }
+  .cart-link-item:hover svg {
+    stroke: var(--light-010);
+  }
 }

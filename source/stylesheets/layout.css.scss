@@ -1,6 +1,21 @@
 .layout {
-    position: relative;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -64px;
+    left: 0;
     width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
+    height: var(--marginXL);
+    background: linear-gradient(
+      to top,
+      var(--primary),
+      var(--primary),
+      var(--light-010)
+    );
+  }
 }
