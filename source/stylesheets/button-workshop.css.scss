@@ -1,0 +1,62 @@
+.buttonWorkshop {
+  width: 100%;
+  min-height: var(--marginXL);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--light-008);
+  border-top: var(--border-styles);
+
+  & a {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    font-weight: 500;
+    padding: var(--marginM) var(--marginM);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--danger);
+      opacity: 0;
+      z-index: 0;
+      transition: 100ms ease-in-out;
+      transition-property: opacity;
+    }
+
+    & span,
+    & svg {
+      z-index: 1;
+    }
+
+    & span {
+      color: var(--primary);
+    }
+
+    & svg {
+      fill: var(--primary) !important;
+      transition: 100ms ease-in-out;
+      transition-property: transform;
+      transition-delay: 0ms;
+    }
+
+    @media (min-width: 768px) {
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+        & svg {
+          transform: translateX(4px);
+          transition-delay: 50ms;
+        }
+      }
+    }
+
+    @media (max-width: 425px) {
+      padding: var(--marginS);
+    }
+  }
+}

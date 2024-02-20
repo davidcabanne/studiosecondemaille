@@ -1,55 +1,78 @@
 .hero {
-    height: calc(100vh - (var(--headerHeight) - 2px));
-    height: calc(100svh - (var(--headerHeight) - 2px));
-    margin-top: calc(var(--headerHeight) - 2px);
-    background: var(--primary);
+  height: calc(100vh - (var(--headerHeight) - 2px));
+  height: calc(100svh - (var(--headerHeight) - 2px));
+  margin-top: calc(var(--headerHeight) - 2px);
+  background: var(--primary);
 }
 
 .heroPlaceholder {
-    width: 100%;
-    height: inherit;
-    border: var(--border-styles);
-    border-right: 1px solid var(--border);
+  width: 100%;
+  height: inherit;
+  border: var(--border-styles);
+  border-right: 1px solid var(--border);
 
-    & img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .heroPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--marginS);
+  background: var(--primary);
+  border: var(--border-styles);
+
+  & h1 {
+    color: var(--light-010);
+    text-transform: uppercase;
+  }
+
+  & div {
+    position: sticky;
+  }
+
+  & .heroFirstPanel {
+    top: calc(64px + 16px);
+    padding-bottom: 160px;
+  }
+  & .heroSecondPanel {
+    top: calc(64px + 16px + 64px);
+    padding-bottom: 80px;
+  }
+  & .heroThirdPanel {
+    padding-top: 80px;
+    top: calc(64px + 16px);
+  }
+
+  & .heroPanelStart {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: var(--marginS);
-    background: var(--primary);
-    border: var(--border-styles);
+    justify-content: flex-start;
+    position: sticky;
+    top: calc(64px + 16px);
+  }
+  & .heroPanelEnd {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: calc(64px + 16px);
+  }
+  & .heroPanelCenter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: calc(64px + 16px);
+  }
 
-    & h1 {
-        color: var(--light-010);
-        text-transform: uppercase;
-    }
-
-    & .heroPanelStart {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-    }
-    & .heroPanelEnd {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-    }
-    & .heroPanelCenter {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    @media (max-width: 768px) {
-        position: absolute;
-        inset: 0;
-        background: none;
-    }
+  @media (max-width: 768px) {
+    position: absolute;
+    inset: 0;
+    background: none;
+  }
 }

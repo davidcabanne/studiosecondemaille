@@ -1,37 +1,31 @@
 <section class="section {{ background }}">
-    {% include 'section-title' title: 'Shop' action: 'View All' link:
-    '/products' background: '{{ background }}' %}
+  {% include 'section-title' title: 'Shop' action: 'View All' link: '/products'
+  background: '{{ background }}' %}
 
-    <div class="featuredProducts grid">
-        <div class="featuredFirst">
-            {% for product in categories.featured.products limit:1 %}
-            <a href="/product/{{ product.permalink }}" class="featuredLink">
-                <div class="featuredPlaceholder">
-                    <img
-                        src="{{ product.image | product_image_url }}"
-                        loading="lazy"
-                    />
-                    <div class="featuredName">
-                        <h3>{{ product.name }}</h3>
-                    </div>
-                </div>
-            </a>
-            {% endfor %}
+  <div class="featuredProducts grid">
+    <div class="featuredFirst">
+      {% for product in categories.featured.products limit:1 %}
+      <a href="/product/{{ product.permalink }}" class="featuredLink">
+        <div class="featuredPlaceholder">
+          <img src="{{ product.image | product_image_url }}" loading="lazy" />
+          <div class="featuredName">
+            <h3>{{ product.name }}</h3>
+          </div>
         </div>
-        <div class="featuredNext">
-            {% for product in categories.featured.products offset:1 limit:2 %}
-            <a href="/product/{{ product.permalink }}" class="featuredLink">
-                <div class="featuredPlaceholderNext">
-                    <img
-                        src="{{ product.image | product_image_url }}"
-                        loading="lazy"
-                    />
-                    <div class="featuredName">
-                        <h3>{{ product.name }}</h3>
-                    </div>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
+      </a>
+      {% endfor %}
     </div>
+    <div class="featuredNext">
+      {% for product in categories.featured.products offset:1 limit:2 %}
+      <a href="/product/{{ product.permalink }}" class="featuredLink">
+        <div class="featuredPlaceholderNext">
+          <img src="{{ product.image | product_image_url }}" loading="lazy" />
+          <div class="featuredName">
+            <h3>{{ product.name }}</h3>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
 </section>

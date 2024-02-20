@@ -22,6 +22,7 @@
     *= require stylesheets/typefaces
     *= require stylesheets/reveal
     *= require stylesheets/buttons
+    *= require stylesheets/button-workshop
     *= require stylesheets/section
     *= require stylesheets/header
     *= require stylesheets/hero

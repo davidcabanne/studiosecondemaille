@@ -1,57 +1,58 @@
 :root {
-    /* COLORS */
-    --primary: #533df5;
-    --border: #442fe0;
-    --yellow: #feffdb;
-    --sable: #fdf2d8;
+  /* COLORS */
+  --primary: #533df5;
+  --border: #442fe0;
+  --yellow: #feffdb;
+  --sable: #fdf2d8;
+  --danger: #eaac8b;
 
-    --dark-002: #4b37dd;
-    --dark-003: #4231c4;
-    --dark-004: #322593;
-    --dark-005: #2a1f7b;
-    --dark-006: #211862;
-    --dark-007: #191249;
-    --dark-008: #080618;
+  --dark-002: #4b37dd;
+  --dark-003: #4231c4;
+  --dark-004: #322593;
+  --dark-005: #2a1f7b;
+  --dark-006: #211862;
+  --dark-007: #191249;
+  --dark-008: #080618;
 
-    --light-001: #6450f6;
-    --light-002: #7564f7;
-    --light-003: #8777f8;
-    --light-004: #988bf9;
-    --light-005: #a99efa;
-    --light-006: #bab1fb;
-    --light-007: #cbc5fc;
-    --light-008: #ddd8fd;
-    --light-009: #eeecfe;
-    --light-010: #fdfffc;
+  --light-001: #6450f6;
+  --light-002: #7564f7;
+  --light-003: #8777f8;
+  --light-004: #988bf9;
+  --light-005: #a99efa;
+  --light-006: #bab1fb;
+  --light-007: #cbc5fc;
+  --light-008: #ddd8fd;
+  --light-009: #eeecfe;
+  --light-010: #fdfffc;
 
-    /* SPACING */
-    --marginXXS: 4px;
-    --marginXS: 8px;
-    --marginS: 16px;
-    --marginM: 32px;
-    --marginL: 40px;
-    --marginXL: 64px;
-    --marginXXL: 128px;
-    --headerHeight: var(--marginXL);
+  /* SPACING */
+  --marginXXS: 4px;
+  --marginXS: 8px;
+  --marginS: 16px;
+  --marginM: 32px;
+  --marginL: 40px;
+  --marginXL: 64px;
+  --marginXXL: 128px;
+  --headerHeight: var(--marginXL);
 
-    /* GRID template */
-    --grid-template: 2fr 1fr;
+  /* GRID template */
+  --grid-template: 2fr 1fr;
 
-    /* BORDER */
-    --border-width: 2px;
-    --border-style: solid;
-    --border-styles: var(--border-width) var(--border-style) var(--border);
-    --border-half: 1px var(--border-style) var(--border);
+  /* BORDER */
+  --border-width: 2px;
+  --border-style: solid;
+  --border-styles: var(--border-width) var(--border-style) var(--border);
+  --border-half: 1px var(--border-style) var(--border);
 
-    /* ANIMATIONS */
-    --animationStyle: cubic-bezier(0.79, 0.14, 0.15, 0.86);
+  /* ANIMATIONS */
+  --animationStyle: cubic-bezier(0.79, 0.14, 0.15, 0.86);
 
-    /* BREAKPOINTS */
-    --mobileS: 320px;
-    --mobileM: 375px;
-    --mobileL: 425px;
-    --tablet: 768px;
-    --laptop: 1024px;
-    --laptopL: 1440px;
-    --desktop: 2560px;
+  /* BREAKPOINTS */
+  --mobileS: 320px;
+  --mobileM: 375px;
+  --mobileL: 425px;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --laptopL: 1440px;
+  --desktop: 2560px;
 }

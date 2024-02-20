@@ -16,27 +16,11 @@ button {
   font-weight: 500;
   cursor: pointer;
   padding: var(--marginS);
+  padding-right: var(--marginM);
   border-left: var(--border-styles);
 
   @media (max-width: 768px) {
     border: none;
-  }
-}
-
-.buttonWorkshop {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  text-transform: uppercase;
-  font-weight: 500;
-  transition: 100ms ease-in-out;
-  transition-property: opacity;
-
-  @media (min-width: 768px) {
-    &:hover {
-      opacity: 0.75;
-    }
   }
 }
 
@@ -49,20 +33,26 @@ button {
 
     & svg {
       fill: var(--primary);
-      transition: 100ms ease-in-out;
-      transition-property: fill;
+      transition: 200ms ease-in-out;
+      transition-property: fill, transform;
+      transition-delay: 0ms, 0ms;
     }
   }
-  transition: 100ms ease-in-out;
+  transition: 200ms ease-in-out;
   transition-property: background, color;
 
   @media (min-width: 768px) {
     &:hover {
       color: var(--light-010);
-      background: var(--light-001);
+      background: var(--light-003);
+      background: #00af54;
+      background: #17b890;
+      background: var(--danger);
 
       & span > svg {
         fill: var(--light-010);
+        transform: translateX(4px);
+        transition-delay: 0ms, 75ms;
       }
     }
   }
