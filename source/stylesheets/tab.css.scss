@@ -1,19 +1,19 @@
 .tabContainer {
-    width: 100%;
-    min-height: var(--marginXL);
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    color: var(--primary);
-    background: var(--light-007);
-    border: var(--border-styles);
+  width: 100%;
+  min-height: var(--marginXL);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: var(--primary);
+  background: var(--light-007);
+  border-top: var(--border-styles);
 
-    & p {
-        font-weight: 500;
-        padding: var(--marginS) var(--marginM);
+  & p {
+    font-weight: 500;
+    padding: var(--marginS) var(--marginM);
 
-        @media (max-width: 425px) {
-            padding: var(--marginS);
-        }
+    @media (max-width: 425px) {
+      padding: var(--marginS);
     }
+  }
 }

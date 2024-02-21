@@ -1,6 +1,6 @@
 .hero {
-  height: calc(100vh - (var(--headerHeight) - 2px));
-  height: calc(100svh - (var(--headerHeight) - 2px));
+  height: calc(100vh - (var(--headerHeight)));
+  height: calc(100svh - (var(--headerHeight)));
   margin-top: calc(var(--headerHeight) - 2px);
   background: var(--primary);
 }
@@ -8,8 +8,6 @@
 .heroPlaceholder {
   width: 100%;
   height: inherit;
-  border: var(--border-styles);
-  border-right: 1px solid var(--border);
 
   & img {
     width: 100%;
@@ -24,7 +22,6 @@
   justify-content: space-between;
   padding: var(--marginS);
   background: var(--primary);
-  border: var(--border-styles);
 
   & h1 {
     color: var(--light-010);

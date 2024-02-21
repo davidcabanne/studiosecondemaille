@@ -8,15 +8,10 @@
   width: 100%;
   height: 100%;
   max-height: calc(100vh - 128px);
-  border: var(--border-styles);
-  border-top: none;
-  border-right: none;
 
   @media (max-width: 768px) {
     height: calc(100vh - 64px);
     max-height: calc(100vh - 64px);
-    border-top: none;
-    border: var(--border-styles);
   }
   @media (max-width: 425px) {
     height: 50vh;
@@ -35,7 +30,6 @@
 .featuredNext {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  border-right: var(--border-styles);
 }
 
 .featuredPlaceholderNext {
@@ -43,9 +37,6 @@
   width: 100%;
   height: 100%;
   max-height: calc((100vh - 128px) / 2);
-  border: var(--border-styles);
-  border-top: none;
-  border-right: none;
 
   @media (max-width: 768px) {
     height: calc(100vh - 64px);
@@ -93,6 +84,7 @@
   text-transform: uppercase;
   background: var(--light-010);
   border-top: var(--border-styles);
+  border-bottom: var(--border-styles);
   transition: 200ms ease-in-out;
   transition-property: background, color;
   transition-delay: 0ms;

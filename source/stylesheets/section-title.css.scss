@@ -1,36 +1,30 @@
 .sectionHeader {
-    height: 128px;
-    border: var(--border-styles);
-    border-top: none;
-
-    @media (max-width: 768px) {
-        border-bottom: none;
-    }
+  height: 128px;
 }
 
 .bgLight {
-    background: var(--light-010);
-    color: var(--primary);
+  background: var(--light-010);
+  color: var(--primary);
 }
 
 .bgLight a span svg {
-    fill: var(--primary);
+  fill: var(--primary);
 }
 
 .bgPrimary {
-    background: var(--primary);
-    color: var(--light-010);
+  background: var(--primary);
+  color: var(--light-010);
 }
 
 .bgPrimary a span svg {
-    fill: var(--light-010);
+  fill: var(--light-010);
 }
 
 .sectionTitleContainer {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    text-transform: uppercase;
-    padding: var(--marginS);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-transform: uppercase;
+  padding: var(--marginS);
 }

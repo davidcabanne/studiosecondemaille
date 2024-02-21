@@ -3,7 +3,7 @@
   background: '{{ background }}' %}
 
   <div class="featuredProducts grid">
-    <div class="featuredFirst">
+    <div class="featuredFirst borderPanelLeft">
       {% for product in categories.featured.products limit:1 %}
       <a href="/product/{{ product.permalink }}" class="featuredLink">
         <div class="featuredPlaceholder">
@@ -15,7 +15,7 @@
       </a>
       {% endfor %}
     </div>
-    <div class="featuredNext">
+    <div class="featuredNext borderPanelRight">
       {% for product in categories.featured.products offset:1 limit:2 %}
       <a href="/product/{{ product.permalink }}" class="featuredLink">
         <div class="featuredPlaceholderNext">
