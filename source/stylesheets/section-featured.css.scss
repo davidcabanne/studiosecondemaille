@@ -110,3 +110,20 @@
     }
   }
 }
+
+.featuredFirst {
+  & .featuredName {
+    border-bottom: none;
+    @media screen and (max-width: 768px) {
+      border-bottom: var(--border-styles);
+    }
+  }
+}
+
+.featuredNext {
+  & a:last-child {
+    & .featuredName {
+      border-bottom: none;
+    }
+  }
+}
