@@ -247,10 +247,10 @@
 
 .cartItemNotification {
   position: absolute;
-  top: -4px;
-  right: -6px;
   width: 12px;
   height: 12px;
   background: var(--danger);
   border-radius: 64px;
+  margin-left: 16px;
+  margin-bottom: 10px;
 }

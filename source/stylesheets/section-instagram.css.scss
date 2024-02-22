@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: calc(100vw - 2px);
   height: 25vw;
   overflow-x: hidden;
 
@@ -15,6 +15,18 @@
       2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
       0 2px 0 0 var(--border) inset;
     pointer-events: none;
+  }
+
+  & .textLarge {
+    font-size: 2vw;
+  }
+
+  @media (max-width: 768px) {
+    height: 50vw;
+
+    & .textLarge {
+      font-size: 4vw;
+    }
   }
 }
 
@@ -68,20 +80,14 @@
     }
   }
 
-  // & img,
-  // & div {
-  //   border: var(--border-styles);
-  //   border-top: 0px;
-  //   border-right: 0px;
-  // }
-  // & > :last-child {
-  //   border-right: var(--border-styles);
-  // }
-
   & img,
   & div {
     width: 25vw;
     aspect-ratio: 1 / 1;
+
+    @media (max-width: 768px) {
+      width: 50vw;
+    }
   }
 
   & img {

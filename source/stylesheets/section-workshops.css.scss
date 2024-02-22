@@ -25,7 +25,7 @@
 
   @media (max-width: 768px) {
     height: 100%;
-    width: 100vw;
+    width: calc(100vw - 2px);
   }
 }
 
@@ -61,5 +61,13 @@
   & .buttonWorkshop {
     position: absolute;
     bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    padding-bottom: 0px;
+    padding-top: var(--marginXL);
+    & .buttonWorkshop {
+      position: relative;
+    }
   }
 }

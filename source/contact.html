@@ -1,12 +1,43 @@
-<section class="section sectionPrimary">
-  <h2 class="sectionTitle">{{ page.name }}</h2>
-
-  <div class="section sectionSecondary contactSection">
-    {% if contact.sent %}
-    <p>Your message has been sent and we&#8217;ll get back to you soon.</p>
-    {% else %}
-    <div class="contactDetailsContainer">
-      <p class="sectionParagraph">
+<section class="section">
+  <div class="contactSection grid boxBorder">
+    <form method="post" action="/contact" class="contactForm">
+      <div class="contactGroup boxBorder">
+        <label for="name" class="contactLabel boxBorder">Name</label>
+        {{ contact | contact_input: 'name' placeholder_input: 'name' }}
+      </div>
+      <div class="contactGroup boxBorder">
+        <label for="email" class="contactLabel boxBorder">Email</label>
+        {{ contact | contact_input: 'email' }}
+      </div>
+      <div class="contactGroup boxBorder">
+        <label for="subject" class="contactLabel boxBorder">Subject</label>
+        {{ contact | contact_input: 'subject' }}
+      </div>
+      <div class="contactMessageGroup boxBorder">
+        <label for="message" class="contactMessageLabel boxBorder"
+          >Message</label
+        >
+        {{ contact | contact_input: 'message' }}
+      </div>
+      {% if contact.sent %}
+      <div>
+        <p>Your message has been sent and we&#8217;ll get back to you soon.</p>
+      </div>
+      {% else %}
+      <button
+        type="submit"
+        name="submit"
+        title="Send us an email"
+        class="boxBorder"
+      >
+        <span>Send me a message !</span> {% include 'arrow-icon' %}
+      </button>
+      {% endif %}
+      <!-- <p class="contactCaptcha">* {{ contact.recaptcha }}</p> -->
+    </form>
+    <div class="contactDetailsContainer boxBorder">
+      <h2>Seconde Maille</h2>
+      <p>
         If you're interested in learning more about the Seconde Maille studio or
         if you're simply curious about my work and potential collaboration
         opportunities, please feel free to reach out at:
@@ -17,41 +48,11 @@
           >hello@studiosecondemaille.com</a
         >.
       </p>
-      <p class="sectionParagraph">
-        I am looking forward to meet you and chat about textiles!
-      </p>
-      <p class="sectionParagraph">
+      <p>I am looking forward to meet you and chat about textiles!</p>
+      <p>
         Looking for me? Please vist our shop 'Atelier Filet Mignon' in the heart
         of the lovely Saint-Michel neighborhood in Bordeaux.
       </p>
     </div>
-    <form method="post" action="/contact" class="contactForm">
-      <div class="contactPannel">
-        <div class="contactGroup">
-          <label for="name" class="sectionParagraph">Name</label>
-          {{ contact | contact_input: 'name' }}
-        </div>
-        <div class="contactGroup">
-          <label for="email" class="sectionParagraph">Email</label>
-          {{ contact | contact_input: 'email' }}
-        </div>
-      </div>
-      <div class="contactGroup">
-        <label for="subject" class="sectionParagraph">Subject</label>
-        {{ contact | contact_input: 'subject' }}
-      </div>
-      <div class="contactGroup">
-        <label for="message" class="sectionParagraph">Message</label>
-        {{ contact | contact_input: 'message' }}
-      </div>
-      <div class="contactGroup">
-        <button type="submit" name="submit" title="Send us an email">
-          Send me a message !
-        </button>
-        <p class="contactCaptcha">* {{ contact.recaptcha }}</p>
-      </div>
-    </form>
-
-    {% endif %}
   </div>
 </section>

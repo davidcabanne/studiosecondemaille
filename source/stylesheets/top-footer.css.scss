@@ -4,7 +4,7 @@
   }
 
   100% {
-    transform: translateX(calc(-100vw - 128px));
+    transform: translateX(calc(-100vw - 5vw));
   }
 }
 
@@ -17,9 +17,16 @@
   background: var(--primary);
   color: white;
   padding: 128px 0px;
-  border-left: var(--border-styles);
-  border-right: var(--border-styles);
-  border-bottom: var(--border-styles);
+  overflow-x: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    border: var(--border-styles);
+    pointer-events: none;
+  }
 
   &:hover {
     & .topFooterWrapper {
@@ -33,7 +40,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 128px;
+  gap: 5vw;
   animation: slide 150000ms infinite linear;
 
   & div {

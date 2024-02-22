@@ -1,5 +1,9 @@
 .sectionHeader {
   height: 128px;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
 }
 
 .bgLight {

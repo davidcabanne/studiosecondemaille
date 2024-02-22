@@ -26,8 +26,16 @@
 
   <body id="{{ page.permalink }}">
     <div class="layout">
-      {% include 'header' %} {{ page_content }} {% include 'top-footer' %} {%
-      include 'footer' %}
+      <!-- HEADER -->
+      {% include 'header' %}
+
+      <!-- PAGE CONTENT -->
+      {{ page_content }}
+      <!-- HEADER -->
+      <!-- TOP FOOTER -->
+      {% include 'top-footer' %}
+      <!-- FOOTER -->
+      {% include 'footer' %}
     </div>
   </body>
 </html>
