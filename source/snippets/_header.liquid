@@ -1,54 +1,79 @@
 <header class="header grid boxBorder">
-    <div class="header-logo"><a href="/">Seconde Maille</a></div>
-    <nav class="nav" role="navigation" aria-label="Main">
-        <ul class="nav-ul">
-            <li {% if page.full_url contains '/products' or page.full_url contains '/product/' or page.full_url
-                contains '/category/' or page.full_url contains '/artist/' %} class="selected" {% endif %}>
-                <a href="/products" class="navLink boxBorder">Shop</a>
-            </li>
-            <li {% if page.full_url contains '/workshops' %} class="selected" {% endif %}>
-                <a href="/workshops" class="navLink boxBorder">Workshops</a>
-            </li>
-            <li {% if page.full_url contains '/about' %} class="selected" {% endif %}>
-                <a href="/about" class="navLink boxBorder">About</a></li>
-            <li {% if page.full_url contains '/contact' %} class="selected" {% endif %}><a href="/contact" class="navLink boxBorder">Contact</a>
-            </li>
-        </ul>
-        <div {% if page.full_url contains '/cart' %} class="selected navCart selectedCartDesktop boxBorder" {% endif %}>
-            <a href="/cart" class="navLink cart-link-item boxBorder">
-                <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="cartItemIcon" aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20" width="16" height="16">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 9V4a3 3 0 0 0-6 0v5m9.92 10H2.08a1 1 0 0 1-1-1.077L2 6h14l.917 11.923A1 1 0 0 1 15.92 19Z"
-                        fill="none"></path>
-                </svg>
-                {% if cart.item_count != 0 %}
-                <span class="cart-num-items cartItemNotification"></span>
-                {% endif %}
-            </a>
-            </div>
-    </nav>
-    <!-- <nav class="navMobile">
-        <ul class="navMobileUl">
-            <li {% if page.full_url contains '/products' or page.full_url contains '/product/' or page.full_url contains '/category/' or page.full_url contains '/artist/' %} class="selected"{% endif %}><a href="/products" class="navLink">Shop</a></li>
-            <li {% if page.full_url contains '/workshops' %} class="selected"{% endif %}><a href="/workshops" class="navLink">Workshops</a></li>
-            <li {% if page.full_url contains '/about' %} class="selected"{% endif %}><a href="/about" class="navLink">About</a></li>
-            <li {% if page.full_url contains '/contact' %} class="selected"{% endif %}><a href="/contact" class="navLink">Contact</a></li>
-            <li {% if page.full_url contains '/cart' %} class="selected selectedCart"{% endif %}>
-              <a href="/cart" class="navLink cart-link-item">
-                <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="cartItemIcon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20" width="32"  height="32" >
-                <path stroke="#feffdb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9V4a3 3 0 0 0-6 0v5m9.92 10H2.08a1 1 0 0 1-1-1.077L2 6h14l.917 11.923A1 1 0 0 1 15.92 19Z" fill="none"></path>
-                </svg>
-                {% if cart.item_count != 0 %}
-                <span class="cart-num-items cartItemNotification"></span>
-                {% endif %}
-              </a>
-            </li>
-            <li class="navMobileSocials">
-              <a href="https://www.instagram.com/secondemaille/">Instagram</a>
-              <a href="https://www.facebook.com/secondemaille/">Facebook</a>
-            </li>
-        </ul>
-    </nav>
-    <div class="menuIcon">menu</div> -->
+  <div class="header-logo">
+    <a href="/">Seconde Maille</a>
+  </div>
+  <nav
+    class="nav"
+    role="navigation"
+    aria-label="Main">
+    <ul class="nav-ul">
+      <li
+        {% if page.full_url contains '/products' or page.full_url contains '/product/' or page.full_url contains '/category/' or page.full_url contains '/artist/' %}
+        class="selected"
+        {% endif %}>
+        <a href="/products" class="navLink boxBorder">Shop</a>
+      </li>
+      <li
+        {% if page.full_url contains '/workshops' %}
+        class="selected"
+        {% endif %}>
+        <a href="/workshops" class="navLink boxBorder">Workshops</a>
+      </li>
+      <li
+        {% if page.full_url contains '/about' %}
+        class="selected"
+        {% endif %}>
+        <a href="/about" class="navLink boxBorder">About</a>
+      </li>
+      <li
+        {% if page.full_url contains '/contact' %}
+        class="selected"
+        {% endif %}>
+        <a href="/contact" class="navLink boxBorder">Contact</a>
+      </li>
+    </ul>
+    <div
+      {% if page.full_url contains '/cart' %}
+      class="selected navCart selectedCartDesktop boxBorder"
+      {% endif %}>
+      <a href="/cart" class="navLink cart-link-item boxBorder">
+        C
+      </a>
+    </div>
+  </nav>
+  <nav class="navMobile">
+    <ul class="navMobileUl">
+      <li
+        {% if page.full_url contains '/products' or page.full_url contains '/product/' or page.full_url contains '/category/' or page.full_url contains '/artist/' %}
+        class="selected"
+        {% endif %}>
+        <a href="/products" class="navLink">Shop</a>
+      </li>
+      <li
+        {% if page.full_url contains '/workshops' %}
+        class="selected"
+        {% endif %}>
+        <a href="/workshops" class="navLink">Workshops</a>
+      </li>
+      <li
+        {% if page.full_url contains '/about' %}
+        class="selected"
+        {% endif %}>
+        <a href="/about" class="navLink">About</a>
+      </li>
+      <li
+        {% if page.full_url contains '/contact' %}
+        class="selected"
+        {% endif %}>
+        <a href="/contact" class="navLink">Contact</a>
+      </li>
+      <li
+        {% if page.full_url contains '/cart' %}
+        class="selected"
+        {% endif %}>
+        <a href="/cart" class="navLink">Cart</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="menuIcon">menu</div>
 </header>

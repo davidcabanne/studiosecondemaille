@@ -7,8 +7,11 @@
     grid-template-rows: 54px 54px 54px 1fr 128px;
 
     @media (max-width: 768px) {
+      height: 100%;
+
       order: 2;
-      grid-template-rows: 54px 54px 54px 1fr 128px;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -16,6 +19,10 @@
   .contactMessageGroup {
     display: grid;
     grid-template-columns: 168px 1fr;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   & .contactLabel {
@@ -24,6 +31,10 @@
     align-items: center;
     padding: 16px 32px;
     height: 54px;
+
+    @media (max-width: 768px) {
+      padding: 16px 16px;
+    }
   }
 
   & .contactMessageLabel {
@@ -31,6 +42,10 @@
     justify-content: start;
     align-items: start;
     padding: 16px 32px;
+
+    @media (max-width: 768px) {
+      padding: 16px 16px;
+    }
   }
 
   & label {
@@ -70,8 +85,12 @@
   }
 
   textarea {
-    resize: none; /* Prevents resizing */
-    overflow-y: auto; /* Ensures vertical scrolling is available if needed */
+    resize: none;
+    overflow-y: auto;
+
+    @media (max-width: 768px) {
+      min-height: 25vh;
+    }
   }
 
   & button {
@@ -83,6 +102,11 @@
 
     & svg {
       fill: var(--light-009);
+    }
+
+    @media (max-width: 768px) {
+      padding: 16px;
+      border-bottom: none;
     }
   }
 }
@@ -97,8 +121,17 @@
     text-transform: uppercase;
   }
 
+  & .sectionParagraphEmail {
+    transition: 200ms var(--animationStyle);
+    transition-property: color;
+
+    &:hover {
+      color: var(--danger);
+    }
+  }
+
   @media (max-width: 768px) {
-    padding: var(--marginM);
+    padding-bottom: var(--marginXL);
     order: 1;
   }
 }

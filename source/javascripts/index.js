@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   try {
     handleReveal();
     handleCart();
-    handleInputs();
-    // handleMobileMenu();
+    // handleInputs();
+    handleMobileMenu();
     // handleScrollDir();
   } catch (error) {
     console.log(error);
