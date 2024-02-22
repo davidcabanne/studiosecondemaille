@@ -35,6 +35,7 @@
     *= require stylesheets/product
     *= require stylesheets/contact
     *= require stylesheets/cart
+    *= require stylesheets/top-footer
     *= require stylesheets/footer
     *= require stylesheets/about
   *

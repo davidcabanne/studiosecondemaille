@@ -17,11 +17,9 @@ button {
   cursor: pointer;
   padding: var(--marginS);
   padding-right: var(--marginM);
-  border-left: var(--border-styles);
-
-  @media (max-width: 768px) {
-    border: none;
-  }
+  box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
+    2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
+    0 2px 0 0 var(--border) inset;
 }
 
 .buttonLink {

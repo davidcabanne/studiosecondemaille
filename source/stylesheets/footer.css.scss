@@ -1,12 +1,17 @@
 footer {
   position: relative;
   width: 100%;
-  padding: var(--marginL) var(--marginM);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--marginM);
   background: var(--primary900);
+
+  & .footerPanel {
+    width: 100%;
+    padding: var(--marginL) var(--marginS);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--marginM);
+  }
 }
+
 .footerContactPannel a {
   width: max-content;
   font-weight: 500;
@@ -34,4 +39,18 @@ footer {
 }
 .footerNav li > a:hover {
   color: var(--danger);
+}
+
+.footerLegal {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-top: var(--marginS);
+  padding-bottom: var(--marginXL);
+  border-top: var(--border-styles);
+
+  & p {
+    padding: 0px var(--marginS);
+    text-transform: uppercase;
+  }
 }

@@ -6,6 +6,16 @@
   width: 100%;
   height: 25vw;
   overflow-x: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
+      2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
+      0 2px 0 0 var(--border) inset;
+    pointer-events: none;
+  }
 }
 
 @keyframes instagramSlide {
@@ -32,6 +42,15 @@
   & .instagramPlaceholder {
     position: relative;
 
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
+        2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
+        0 2px 0 0 var(--border) inset;
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -49,15 +68,15 @@
     }
   }
 
-  & img,
-  & div {
-    border: var(--border-styles);
-    border-top: 0px;
-    border-right: 0px;
-  }
-  & > :last-child {
-    border-right: var(--border-styles);
-  }
+  // & img,
+  // & div {
+  //   border: var(--border-styles);
+  //   border-top: 0px;
+  //   border-right: 0px;
+  // }
+  // & > :last-child {
+  //   border-right: var(--border-styles);
+  // }
 
   & img,
   & div {

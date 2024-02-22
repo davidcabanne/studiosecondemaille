@@ -6,8 +6,15 @@
 }
 
 .heroPlaceholder {
+  position: relative;
   width: 100%;
   height: inherit;
+
+  & .boxBorder {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
 
   & img {
     width: 100%;

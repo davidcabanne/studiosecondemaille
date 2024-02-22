@@ -113,3 +113,9 @@ img {
 .borderTop {
   border-top: var(--border-styles);
 }
+
+.boxBorder {
+  box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
+    2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
+    0 2px 0 0 var(--border) inset;
+}

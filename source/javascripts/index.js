@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   try {
-    // handleLazyLoad();
     handleReveal();
     handleCart();
     handleMobileMenu();
-    handleModal();
+    // handleScrollDir();
   } catch (error) {
     console.log(error);
   }

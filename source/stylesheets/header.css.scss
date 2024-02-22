@@ -2,10 +2,14 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: calc(100vw - 2px);
   height: var(--headerHeight);
   background: var(--light-010);
   z-index: 99;
+}
+
+.header {
+  transition: opacity 200ms ease-in-out;
 }
 
 .header-logo {
@@ -45,19 +49,6 @@ nav {
   cursor: pointer;
   transition: 100ms ease-in-out;
   transition-property: background, color;
-}
-
-.nav-ul li:nth-child(1),
-.nav-ul li:nth-child(2) {
-  box-sizing: content-box;
-  border-left: var(--border-styles);
-  border-bottom: var(--border-half);
-}
-.nav-ul li:nth-child(3),
-.nav-ul li:nth-child(4) {
-  box-sizing: content-box;
-  border-left: var(--border-styles);
-  border-top: var(--border-half);
 }
 
 .nav-ul li a {
@@ -102,7 +93,6 @@ nav div {
   justify-content: center;
   align-items: center;
   box-sizing: content-box;
-  border-left: var(--border-styles);
   transition: 100ms ease-in-out;
   transition-property: background;
 }

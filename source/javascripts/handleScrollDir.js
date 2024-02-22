@@ -19,10 +19,10 @@
 //   const header = document.querySelector(".header");
 //   // SCROLL UP
 //   if (previousScrollPos > scrollPos) {
-//     header.style.transform = "translateY(0px)";
+//     header.style.opacity = 1;
 //   }
 //   // SCROLL DOWN
 //   else {
-//     header.style.transform = "translateY(-96px)";
+//     header.style.opacity = 0;
 //   }
 // });
