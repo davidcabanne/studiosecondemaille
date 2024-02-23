@@ -1,0 +1,99 @@
+.sectionAbout {
+  margin-top: 64px;
+  width: calc(100vw - 2px);
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
+}
+
+.aboutPlaceholder,
+.aboutContainer {
+  display: grid;
+  grid-template-rows: 1fr 64px;
+
+  & .aboutLink {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--light-009);
+    text-transform: uppercase;
+    padding: var(--marginS) var(--marginM);
+    box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
+      2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
+      0 2px 0 0 var(--border) inset;
+    transition: 200ms ease-in-out;
+    transition-property: background;
+
+    & svg {
+      fill: var(--light-009);
+    }
+
+    @media (min-width: 768px) {
+      &:hover {
+        background: var(--danger);
+      }
+    }
+  }
+}
+
+.aboutPlaceholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    aspect-ratio: 16 / 9;
+    order: 2;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
+      2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
+      0 2px 0 0 var(--border) inset;
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    height: calc(100vh - 64px - 64px - 2px);
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  & .aboutLink {
+    background: var(--light-001);
+  }
+}
+
+.aboutContainer {
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--marginS);
+    padding: var(--marginS);
+
+    & a {
+      color: var(--danger);
+    }
+  }
+
+  & .aboutLink {
+    background: var(--primary);
+  }
+
+  @media (max-width: 768px) {
+    & > div {
+      padding: var(--marginM) var(--marginS) var(--marginXL) var(--marginS);
+    }
+  }
+}

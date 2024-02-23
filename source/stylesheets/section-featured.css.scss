@@ -1,9 +1,4 @@
-.featuredProducts {
-  width: 100%;
-  height: 100%;
-}
-
-.featuredPlaceholder {
+.featuredPlaceholderMain {
   position: relative;
   width: 100%;
   height: 100%;
@@ -19,7 +14,35 @@
   }
 }
 
-.featuredFirst {
+.featuredItemLink {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    &:hover .featuredName {
+      color: var(--light-010);
+      background-color: var(--light-005);
+      transition-delay: 80ms;
+    }
+    &:hover .featuredPlaceholderMain {
+      &::after {
+        opacity: 1;
+      }
+    }
+    &:hover .featuredPlaceholderSecondary {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.featuredMainItem,
+.featuredSecondaryItems {
+  display: flex;
+  flex-direction: column;
+
   & img {
     width: 100%;
     height: 100%;
@@ -27,13 +50,13 @@
   }
 }
 
-.featuredNext {
+.featuredSecondaryItems {
   display: grid;
   grid-template-rows: 1fr 1fr;
 }
 
-.featuredFirst,
-.featuredNext {
+.featuredMainItem,
+.featuredSecondaryItems {
   position: relative;
 
   & .placeHolderBorder {
@@ -45,7 +68,7 @@
   }
 }
 
-.featuredPlaceholderNext {
+.featuredPlaceholderSecondary {
   position: relative;
   width: 100%;
   height: 100%;
@@ -61,8 +84,8 @@
   }
 }
 
-.featuredPlaceholder,
-.featuredPlaceholderNext {
+.featuredPlaceholderMain,
+.featuredPlaceholderSecondary {
   &::after {
     content: "";
     position: absolute;
@@ -76,19 +99,8 @@
   }
 }
 
-.featuredNext {
-  & img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.featuredName {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+.featuredItemName {
+  position: relative;
   width: 100%;
   height: 56px;
   display: flex;
@@ -99,25 +111,5 @@
   transition: 200ms ease-in-out;
   transition-property: background, color;
   transition-delay: 0ms;
-  z-index: 1;
-}
-
-.featuredLink {
-  @media (min-width: 768px) {
-    &:hover .featuredName {
-      color: var(--light-010);
-      background-color: var(--light-005);
-      transition-delay: 80ms;
-    }
-    &:hover .featuredPlaceholder {
-      &::after {
-        opacity: 1;
-      }
-    }
-    &:hover .featuredPlaceholderNext {
-      &::after {
-        opacity: 1;
-      }
-    }
-  }
+  z-index: 31;
 }

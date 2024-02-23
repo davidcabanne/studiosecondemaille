@@ -14,7 +14,7 @@
     width: 100%;
     font-weight: 500;
     padding: var(--marginM) var(--marginM);
-    transition: 150ms ease-in-out;
+    transition: 150ms cubic-bezier(0.86, 0, 0.07, 1);
     transition-property: padding-top;
 
     &::after {
