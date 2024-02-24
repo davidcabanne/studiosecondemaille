@@ -68,14 +68,13 @@
       position: absolute;
       inset: 0;
       background: var(--primary);
-      mix-blend-mode: hue;
       opacity: 0;
       transition: opacity 250ms ease-in-out;
     }
 
     &:hover {
       &::after {
-        opacity: 1;
+        opacity: .5;
       }
     }
   }

@@ -15,25 +15,33 @@
   <aside class="productPanel boxBorder">
 
     <div class="productContent">
-      {% comment %} container {% endcomment %}
-
-      {% comment %} <div class="productRoutingContainer">
-                                <a href="/products">Shop</a>
-                                <span>/</span>
-                                {% assign category_names = "" %}
-                                {% for category in product.categories %}
-                                  {% unless category.name == 'featured' %}
-                                    {% if category_names == "" %}
-                                      {% assign category_names = category.name | downcase %}
-                                      {% break %}
-                                    {% endif %}
-                                  {% endunless %}
-                                {% endfor %}
-                                <a href="/category/{{ category_names | url_encode }}">
-                                  {{ category_names }}
-                                </a>
-                        </div> {% endcomment %}
       <div class="productInfos">
+        <div class="productRoutingContainer">
+        {% assign categories = product.categories %}
+          <!-- Assuming 'product.categories' is your array of CategoryDrop objects -->
+          {% assign category_to_display = nil %}
+
+          {% for category in categories %}
+            {% if category.name != "featured" %}
+              {% assign category_to_display = category %}
+              {% break %}
+              <!-- This stops the loop after finding the first non-featured category -->
+            {% endif %}
+          {% endfor %}
+
+          {% if category_to_display != nil %}
+            <a href="/products" id="product-link">Shop</a>
+            <span>/</span>
+            <a href="/category/{{ category_to_display.name | downcase | url_encode }}" id="category-link">
+              {{ category_to_display.name | downcase }}
+            </a>
+
+          <!-- Outputs the name of the first non-featured category in lowercase -->
+          {% else %}
+            _
+          {% endif %}
+        </div>
+
         <h2>{{ product.name }}</h2>
 
         <div class="productDefaultPrice textLarge">

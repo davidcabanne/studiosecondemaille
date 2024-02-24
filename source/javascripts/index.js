@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     handleCart();
     // handleInputs();
     handleMobileMenu();
+    handleLinkClick();
     // handleScrollDir();
   } catch (error) {
     console.log(error);

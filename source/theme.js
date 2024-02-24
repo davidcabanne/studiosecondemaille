@@ -23,3 +23,4 @@
 //= require javascripts/handleCart
 //= require javascripts/handleMobileMenu
 //= require javascripts/handleInputs
+//= require javascripts/handleLinkClick
