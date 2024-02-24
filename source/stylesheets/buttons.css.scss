@@ -48,7 +48,6 @@ button {
   @media (min-width: 768px) {
     &:hover {
       color: var(--light-010);
-      // background: var(--light-003);
       background: var(--danger);
 
       & span > svg {

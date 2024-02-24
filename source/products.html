@@ -1,5 +1,4 @@
-<section class="section sectionPrimary">
-  <h2 class="sectionTitle">Shop</h2>
+<section class="section sectionProducts boxBorder">
 
   <!-- <h5>{% if page.full_url contains "search=" %}Search results{% else %}{{ page.name }}{% endif %}</h5> -->
 
@@ -17,60 +16,63 @@
     </div>
   {% endif %}
 
-  <div class="productsSection">
+  <div class="productsContainer">
     {% paginate products from products.current by theme.products_per_page %}
-    {% if products.size == 1 %}
-    <ul class="revealContainer">
-      {% for product in products %}
-      <li class="{{ product.css_class }} productsOnlyItem revealAnimationOpacity">
-        <a href="{{ product.url }}">
-          <div>
-            <img
-              alt="Image of {{ product.name | escape }}"
-              src="{{ product.image | product_image_url }}"
-            />
-            <button>Shop Now</button>
-        </div>
-        </a>
-        <a href="{{ product.url }}" class="productDetailContainer">
-          <b>{{ product.name }}</b>
-        </a>
-        <i>{{ product.default_price | money_with_sign }}</i>
-        {% if product.on_sale %}
-        <em>On Sale</em>
-        {% endif %}
-      </li>
-      <li></li>
-      <li></li>
-      {% endfor %}
-    </ul>
-     {% endif %}
-    {%
-    if products != blank and products.size > 1 %}
+      {% if products.size == 1 %}
+      <ul class="revealContainer">
+        {% for product in products %}
+          <li class="{{ product.css_class }} revealAnimationOpacity">
+            <a href="{{ product.url }}">
+              <div class="productPlaceholder boxBorder">
+                <img
+                alt="Image of {{ product.name | escape }}"
+                src="{{ product.image | product_image_url }}"
+              />
+              </div>
+                <div class="productItemName boxBorder">
+                  <p>{{ product.name }}</p>
+                  {% comment %} <i>{{ product.default_price | money_with_sign }}</i> {% endcomment %}
+                  {% comment %} {% if product.on_sale %}
+                  <em>On Sale</em>
+                  {% endif %} {% endcomment %}
+                </div>
+            </a>
+          </li>
+          <li class="productsOnylItem boxBorder">
+            <span>Last item available,</span>
+            <span>don't sleep :)</span>
+          </li>
+        {% endfor %}
+      </ul>
+       {% endif %}
+      {% endpaginate %}
+    {% paginate products from products.current by theme.products_per_page %}
+    {% if products != blank and products.size > 1 %}
     <ul class="revealContainer">
       {% for product in products %}
       <li class="{{ product.css_class }} revealAnimationOpacity">
         <a href="{{ product.url }}">
-          <div>
+          <div class="productPlaceholder boxBorder">
             <img
-              alt="Image of {{ product.name | escape }}"
-              src="{{ product.image | product_image_url }}"
-            />
-            <button>Shop Now</button>
-        </div>
+            alt="Image of {{ product.name | escape }}"
+            src="{{ product.image | product_image_url }}"
+          />
+          </div>
+            <div class="productItemName boxBorder">
+              <p>{{ product.name }}</p>
+              {% comment %} <i>{{ product.default_price | money_with_sign }}</i> {% endcomment %}
+              {% comment %} {% if product.on_sale %}
+              <em>On Sale</em>
+              {% endif %} {% endcomment %}
+            </div>
         </a>
-        <a href="{{ product.url }}" class="productDetailContainer">
-          <b>{{ product.name }}</b>
-        </a>
-        <i>{{ product.default_price | money_with_sign }}</i>
-        {% if product.on_sale %}
-        <em>On Sale</em>
-        {% endif %}
       </li>
       {% endfor %}
     </ul>
 
-    {{ paginate | default_pagination }}
+      <div class="paginationContainer">
+        {{ paginate | default_pagination }}
+      </div>
    {% if products == blank %} 
    <p>No products found.</p>
 

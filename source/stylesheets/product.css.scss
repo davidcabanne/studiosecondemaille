@@ -1,0 +1,133 @@
+.productSection {
+  display: grid;
+  grid-template-columns: 2fr minmax(386px, 1fr);
+  margin-top: var(--marginXL);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  & .productImagesContainer {
+    position: relative;
+    width: 100%;
+
+    & .productImagePlaceholder {
+      position: relative;
+      z-index: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
+          2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
+          0 2px 0 0 var(--border) inset;
+        pointer-events: none;
+      }
+
+      & img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.productPanel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.productContent {
+  position: sticky;
+  top: var(--marginXL);
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & .productInfos {
+    display: flex;
+    flex-direction: column;
+    padding: var(--marginS);
+  }
+
+  & h2 {
+    text-transform: uppercase;
+    margin-bottom: var(--marginS);
+  }
+}
+
+.productRoutingContainer {
+  display: flex;
+  gap: var(--marginXS);
+  margin-bottom: var(--marginS);
+
+  & a,
+  span {
+    color: var(--light-005);
+    text-transform: uppercase;
+  }
+}
+
+.productDefaultPrice {
+  margin-bottom: var(--marginM);
+
+  & h5 {
+    font-weight: 500;
+  }
+}
+
+.productDescription {
+  display: flex;
+  flex-direction: column;
+  gap: var(--marginS);
+  margin-bottom: var(--marginM);
+}
+
+.productForm {
+  & select {
+    width: 100%;
+    height: var(--marginXL);
+    border: none;
+    outline: none;
+    color: var(--primary);
+    background: var(--light-008) !important;
+    padding: var(--marginS);
+    box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
+      2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
+      0 2px 0 0 var(--border) inset;
+  }
+
+  & button {
+    width: 100%;
+    height: var(--marginXL);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--light-009);
+    padding: var(--marginS);
+    transition: 200ms ease-in-out;
+    transition-property: background;
+
+    & svg {
+      fill: var(--light-009);
+      transition: 200ms ease-in-out;
+      transition-property: fill, transform;
+      transition-delay: 0ms, 0ms;
+    }
+
+    @media (min-width: 768px) {
+      &:hover {
+        background: var(--danger);
+
+        & svg {
+          transform: translateX(4px);
+          transition-delay: 0ms, 75ms;
+        }
+      }
+    }
+  }
+}
