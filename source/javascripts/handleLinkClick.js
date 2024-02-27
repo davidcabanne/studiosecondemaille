@@ -4,15 +4,15 @@ const handleLinkClick = () => {
     categoryLink: document.getElementById("category-link"),
   };
 
-  Object.keys(links).forEach(key => {
+  Object.keys(links).forEach((key) => {
     const link = links[key];
-    if (link) { // Check if the link exists
+    if (link) {
       link.addEventListener("click", function (event) {
-        window.location.href = link.href; // Use the href of the clicked link
-        event.stopPropagation(); // Prevent event bubbling
+        window.location.href = link.href;
+        event.stopPropagation();
       });
     }
   });
 };
 
-handleLinkClick(); // Call the function to attach the event listeners
+handleLinkClick();

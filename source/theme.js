@@ -24,3 +24,4 @@
 //= require javascripts/handleMobileMenu
 //= require javascripts/handleInputs
 //= require javascripts/handleLinkClick
+//= require javascripts/handleDescription
