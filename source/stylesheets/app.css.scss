@@ -118,3 +118,11 @@ img {
     2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
     0 2px 0 0 var(--border) inset;
 }
+
+.bgLight {
+background: var(--light-010);
+}
+
+.bgPrimary {
+  background: var(--primary);
+}

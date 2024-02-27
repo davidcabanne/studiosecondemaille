@@ -14,7 +14,7 @@
           <li class="cartProductPannel boxBorder">
             <div class="cartProduct">
               <div class="cartProductImgPlaceholder">
-                <a href="{{ item.product.url }}" >
+                <a href="{{ item.product.url }}">
                   <img class="cartProductImg" src="{{ item.product.image |
                   product_image_url size:"small" }}">
                 </a>
@@ -64,7 +64,18 @@
           <span>{{ cart.subtotal | money_with_sign }}</span>
         </div>
         <button type="submit" name="checkout" title="Checkout">
-          Checkout {% include 'arrow-icon' %}
+          Checkout
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 10.9219L11.9903 1.09766C11.9903 0.541016 11.6289 0.150391 11.043 0.150391H1.21875C0.671871 0.150391 0.300781 0.570313 0.300781 1.03906C0.300781 1.50781 0.720701 1.9082 1.17969 1.9082H4.57812L9.34377 1.75195L7.52734 3.34375L0.583986 10.1828C0.408204 10.3586 0.310548 10.5832 0.310548 10.7981C0.310548 11.2668 0.73047 11.7063 1.21875 11.7063C1.44336 11.7063 1.65821 11.6281 1.83399 11.4426L8.79688 4.61328L10.4082 2.78711L10.2324 7.34765V10.9609C10.2324 11.4199 10.6328 11.8496 11.1114 11.8496C11.5801 11.8496 12 11.4492 12 10.9219Z"
+            />
+          </svg>
         </button>
       </div>
     </div>
