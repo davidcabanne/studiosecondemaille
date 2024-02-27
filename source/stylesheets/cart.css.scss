@@ -48,23 +48,41 @@
   padding: var(--marginS);
   margin-top: var(--marginXL);
 }
+
 .cartGroupCheckout div p,
 .cartGroupCheckout div span {
   font-weight: 600;
 }
+
 .cartItems {
   font-size: 24px;
 }
+
 .cartProductPannel {
   width: 100%;
-  max-height: 180px;
   display: flex;
   gap: var(--marginS);
   justify-content: space-between;
+
+  @media screen and (max-width: 425px) {
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
+.cartProduct {
+  display: flex;
+
+  @media screen and (max-width: 425px) {
+    flex-direction: column;
+  }
 }
 
 .cartProductImgPlaceholder {
   position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 240px;
   z-index: 1;
 
   &::after {
@@ -75,14 +93,26 @@
     box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
       2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
       0 2px 0 0 var(--border) inset;
-      pointer-events: none;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 100%;
+    max-width: 100%;
+    height: 25vh;
   }
 }
 
-.cartProductPannel .cartProductImg {
-  height: 180px;
+.cartProductImg {
+  width: 100%;
+  height: 100%;
+  max-width: 240px;
   object-fit: cover;
-  aspect-ratio: 1 / 1;
+
+  @media screen and (max-width: 425px) {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .cartProductPannel .cartProductTitle {
@@ -99,10 +129,6 @@
   text-decoration: underline;
 }
 
-.cartProduct {
-  display: flex;
-}
-
 .cartProductDetails {
   display: flex;
   flex-direction: column;
@@ -113,6 +139,10 @@
 
 .cartProductDetailsMargin {
   align-items: end;
+
+  @media screen and (max-width: 425px) {
+    align-items: start;
+  }
 }
 
 .cartProductQuantity {
@@ -122,8 +152,8 @@
 }
 
 .cartProductQuantity .cartProductQuantityButton {
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   color: var(--primary);
   background: var(--secondary600);
   display: flex;
@@ -138,8 +168,8 @@
   border: none;
   margin: 0px !important;
   padding: 0px !important;
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   text-align: center;
   border-radius: 4px;
   color: var(--primary);
@@ -206,6 +236,10 @@
   justify-content: center;
   align-items: start;
   gap: var(--marginXS);
+
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
 }
 
 .removeActionContainer p {
