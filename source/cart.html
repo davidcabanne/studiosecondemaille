@@ -1,23 +1,24 @@
-<section class="section cartSection">
+<section class="section section cartSection">
   {% if cart.items != blank %}
-  <div class="cartGroupContainer flexCenter">
-    <div class="cartGroupWrapper cartGroupWidth">
-      <h3 class="cartItems">Your cart</h3>
-      <span class="cartItemCount">{{ cart.item_count }}</span>
+  <div class="cartGroupContainer boxBorder">
+    <div class="cartGroupWrapper">
+      <h3 class="cartItems">Your cart ({{ cart.item_count }})</h3>
     </div>
   </div>
 
-  <form class="cartForm" method="post" action="/cart">
-    <div class="cartGroupContainer cartGroupMargin">
-      <div class="cartGroupWrapper">
+  <form class="cartForm boxBorder" method="post" action="/cart">
+    <div class="cartGroupContainer">
+      <div class="boxBorder">
         <ul class="unstyled cartProductsContainer">
           {% for item in cart.items %}
-          <li class="cartProductPannel">
+          <li class="cartProductPannel boxBorder">
             <div class="cartProduct">
-              <a href="{{ item.product.url }}">
-                <img class="cartProductImg" src="{{ item.product.image |
-                product_image_url size:"small" }}">
-              </a>
+              <div class="cartProductImgPlaceholder">
+                <a href="{{ item.product.url }}" >
+                  <img class="cartProductImg" src="{{ item.product.image |
+                  product_image_url size:"small" }}">
+                </a>
+              </div>
               <div class="cartProductDetails">
                 <a class="cartProductTitle" href="{{ item.product.url }}">
                   <span class="productName"> {{ item.product.name }} </span>
@@ -47,7 +48,7 @@
               </a>
               <div class="cartProductPrice">
                 <p>{{ item.price | money_with_sign }}</p>
-                <p>Shipping: {{item.shipping}}</p>
+                <!-- <p>Shipping: {{item.shipping}}</p> -->
               </div>
             </div>
           </li>
@@ -56,20 +57,24 @@
         </ul>
       </div>
     </div>
-    <div class="cartGroupContainer flexCenter">
-      <div class="cartGroupWrapper cartGroupCheckout cartGroupWidth">
+    <div class="cartGroupCheckoutContainer">
+      <div class="cartGroupCheckout boxBorder">
         <div>
           <p>Subtotal:</p>
           <span>{{ cart.subtotal | money_with_sign }}</span>
         </div>
-        <button type="submit" name="checkout" title="Checkout">Checkout</button>
+        <button type="submit" name="checkout" title="Checkout">
+          Checkout {% include 'arrow-icon' %}
+        </button>
       </div>
     </div>
   </form>
 
   {% else %}
 
-  <div class="cartGroupContainer flexCenter">
+  <div
+    class="cartGroupContainer section cartSection emptyCartSection boxBorder"
+  >
     <div class="cartGroupEmpty">
       <h3 class="cartItems cartShopList">
         <a href="/products"

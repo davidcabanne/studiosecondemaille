@@ -5,10 +5,18 @@
 }
 
 .category_list {
+  position: sticky;
+  top: 64px;
+  z-index: 10;
+
   & ul {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
 
     & .categoryButton,
     & .currentCategory {
@@ -62,6 +70,10 @@
       width: 100%;
       height: calc(100vh - (64px + 64px + 64px + 2px));
       object-fit: cover;
+
+      @media (max-width: 768px) {
+        height: calc(100vh - (64px + 64px + 64px + 64px + 2px));
+      }
     }
   }
 }
@@ -124,7 +136,7 @@
 
       &.disabled {
         cursor: not-allowed;
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }
