@@ -36,6 +36,17 @@
     align-items: center;
     padding: var(--marginS);
     background: var(--light-001);
+    transition: 150ms ease-in-out;
+    transition-property: background;
+    box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
+      2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
+      0 2px 0 0 var(--border) inset;
+
+    @media (min-width: 768px) {
+      &:hover {
+        background: var(--danger);
+      }
+    }
 
     & svg {
       fill: var(--light-010);
@@ -63,18 +74,27 @@
   display: flex;
   gap: var(--marginS);
   justify-content: space-between;
+  transition: 100ms ease-in-out;
+  transition-property: background;
 
   @media screen and (max-width: 425px) {
     flex-direction: column;
     gap: 0px;
   }
+
+  @media screen and (min-width: 780px) {
+    &:hover {
+      background: var(--sable);
+    }
+  }
 }
 
 .cartProduct {
-  display: flex;
+  display: grid;
+  grid-template-columns: 180px 1fr;
 
   @media screen and (max-width: 425px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -82,7 +102,6 @@
   position: relative;
   height: 100%;
   width: 100%;
-  max-width: 240px;
   z-index: 1;
 
   &::after {
@@ -106,7 +125,7 @@
 .cartProductImg {
   width: 100%;
   height: 100%;
-  max-width: 240px;
+  aspect-ratio: 1 /1;
   object-fit: cover;
 
   @media screen and (max-width: 425px) {
@@ -244,7 +263,6 @@
 
 .removeActionContainer p {
   font-size: 20px;
-  // transform: translateY(-5px);
   transition: 200ms var(--animationStyle);
   transition-property: opacity;
 }

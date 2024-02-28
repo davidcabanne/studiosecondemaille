@@ -97,8 +97,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--border);
     padding: 32px;
+    transition: 150ms ease-in-out;
+    transition-property: background;
+
+    @media (min-width: 768px) {
+      &:hover {
+        background: var(--danger);
+      }
+    }
 
     & svg {
       fill: var(--light-009);
@@ -106,7 +113,6 @@
 
     @media (max-width: 768px) {
       padding: 16px;
-      border-bottom: none;
     }
   }
 }

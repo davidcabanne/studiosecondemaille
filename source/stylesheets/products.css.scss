@@ -66,6 +66,26 @@
       grid-template-columns: 1fr;
     }
 
+    & li {
+      @media (min-width: 768px) {
+        &:hover {
+          & .productPlaceholder {
+            &::before {
+              opacity: 0.25;
+            }
+
+            & img {
+              transform: scale(1.025);
+            }
+          }
+
+          & .productItemName {
+            background: var(--danger);
+          }
+        }
+      }
+    }
+
     & img {
       width: 100%;
       height: calc(100vh - (64px + 64px + 64px + 2px));
@@ -80,6 +100,19 @@
 
 .productPlaceholder {
   position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: var(--primary);
+    pointer-events: none;
+    z-index: 4;
+    transition: 200ms ease-in-out;
+    transition-property: opacity;
+  }
 
   &::after {
     content: "";
@@ -88,6 +121,13 @@
     box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
       2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
       0 2px 0 0 var(--border) inset;
+  }
+
+  & img {
+    position: relative;
+    z-index: -1;
+    transition: 200ms ease-in-out;
+    transition-property: transform;
   }
 }
 
@@ -98,6 +138,8 @@
   height: 64px;
   text-transform: uppercase;
   background: var(--light-010);
+  transition: 150ms ease-in-out;
+  transition-property: background;
 }
 
 .productsOnylItem {
