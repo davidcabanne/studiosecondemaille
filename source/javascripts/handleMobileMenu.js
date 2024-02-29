@@ -27,21 +27,19 @@ const handleToggle = () => {
 
 const handleMenuAnimation = (state, navMobileUl) => {
   const nodeList = navMobileUl.children[0];
-  console.log(state);
 
   if (state) {
     [...nodeList.children].forEach((item, index) => {
-      console.log(item)
-      item.style.opacity = "1";
-      item.style.transform = "translateY(0px)";
-      item.style.transitionDelay = `${50 + index * 50}ms`;
+      item.children[0].style.opacity = "1";
+      item.children[0].style.transform = "translateX(0px)";
+      item.children[0].style.transitionDelay = `${50 + index * 25}ms`;
     });
   }
   if (!state) {
     [...nodeList.children].reverse().forEach((item, index) => {
-      item.style.opacity = "0";
-      item.style.transform = "translateY(-16px)";
-      item.style.transitionDelay = `${50 + index * 50}ms`;
+      item.children[0].style.opacity = "0";
+      item.children[0].style.transform = "translateX(-32px)";
+      item.children[0].style.transitionDelay = `${50 + index * 25}ms`;
     });
   }
 };

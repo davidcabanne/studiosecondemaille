@@ -26,7 +26,7 @@ header {
   }
 }
 
-nav {
+.nav {
   display: grid;
   grid-template-columns: 1fr 64px;
 
@@ -116,6 +116,7 @@ nav div {
 .navMobile {
   display: none;
 }
+
 .menuIcon {
   display: none;
   cursor: pointer;
@@ -140,6 +141,10 @@ nav div {
 }
 
 @media screen and (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
   header {
     display: flex !important;
     justify-content: space-between;
@@ -160,6 +165,7 @@ nav div {
   }
 
   .navMobile {
+    display: block;
     position: absolute;
     top: 64px;
     left: 0;
@@ -169,16 +175,16 @@ nav div {
     opacity: 0;
     pointer-events: none;
     transition: 200ms var(--animationStyle);
-    transition-property: opacity;
-    transition-delay: 150ms;
+    transition-property: opacity, transform;
+    transition-delay: 250ms;
     z-index: -1;
     box-shadow: 2px 0 0 0 var(--border), 0 2px 0 0 var(--border),
       2px 2px 0 0 var(--border), 2px 0 0 0 var(--border) inset,
       0 2px 0 0 var(--border) inset;
   }
+
   .navMobileActive {
     display: block !important;
-
     pointer-events: auto;
     opacity: 1;
     transition-delay: 50ms;
@@ -211,6 +217,10 @@ nav div {
         font-size: 24px;
         text-transform: uppercase;
         padding: 16px;
+        opacity: 0;
+        transform: translateX(-32px);
+        transition: 200ms ease-in-out;
+        transition-property: opacity, transform;
 
         & svg {
           stroke: var(--primary);
