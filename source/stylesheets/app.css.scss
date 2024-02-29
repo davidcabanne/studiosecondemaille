@@ -120,9 +120,18 @@ img {
 }
 
 .bgLight {
-background: var(--light-010);
+  background: var(--light-010);
 }
 
 .bgPrimary {
   background: var(--primary);
+}
+
+.magnetItem {
+  --x: 0;
+  --y: 0;
+  @media (min-width: 768px) {
+    transform-origin: 50% 50%;
+    transform: translate(var(--x), var(--y));
+  }
 }

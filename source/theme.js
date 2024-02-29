@@ -16,12 +16,12 @@
 // also including jQuery in our layout.html from Google so that it can be better cached by users.
 //
 //= require javascripts/index
-//= require javascripts/handleScrollDir
-//= require javascripts/handleReveal
 //= require javascripts/product
 //= require javascripts/cart
+//= require javascripts/handleReveal
 //= require javascripts/handleCart
 //= require javascripts/handleMobileMenu
 //= require javascripts/handleInputs
 //= require javascripts/handleLinkClick
 //= require javascripts/handleDescription
+//= require javascripts/handleMagnet

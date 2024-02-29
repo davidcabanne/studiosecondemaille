@@ -1,21 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var nameInput = document.querySelector('input[name="name"]');
+const handleInputs = () => {
+  let nameInput = document.querySelector('input[name="name"]');
   if (nameInput) {
     nameInput.placeholder = "Your Name";
   }
 
-  var emailInput = document.querySelector('input[name="email"]');
+  let emailInput = document.querySelector('input[name="email"]');
   if (emailInput) {
     emailInput.placeholder = "Your Email";
   }
 
-  var subjectInput = document.querySelector('input[name="subject"]');
+  let subjectInput = document.querySelector('input[name="subject"]');
   if (subjectInput) {
     subjectInput.placeholder = "Subject";
   }
 
-  var messageInput = document.querySelector('textarea[name="message"]');
+  let messageInput = document.querySelector('textarea[name="message"]');
   if (messageInput) {
     messageInput.placeholder = "Your Message";
   }
-});
+};

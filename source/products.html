@@ -10,7 +10,6 @@
         {% if category.name != 'featured' %}
           <li{% if page.full_url contains category.url %} class="currentCategory categoryButton"{% endif %} class="categoryButton">{{ category | link_to }}</li>
           {% endif %}
-
         {% endfor %}
       </ul>
     </div>
@@ -59,7 +58,7 @@
           />
           </div>
             <div class="productItemName boxBorder">
-              <p>{{ product.name }}</p>
+              <h3>{{ product.name }}</h3>
               {% comment %} <i>{{ product.default_price | money_with_sign }}</i> {% endcomment %}
               {% comment %} {% if product.on_sale %}
               <em>On Sale</em>

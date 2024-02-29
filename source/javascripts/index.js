@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     handleMobileMenu();
     handleLinkClick();
     handleDescription();
-    // handleInputs();
-    // handleScrollDir();
+    handleMagnet();
+    handleInputs();
   } catch (error) {
     console.log(error);
   }
