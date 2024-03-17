@@ -39,5 +39,6 @@
     *= require stylesheets/footer
     *= require stylesheets/about
     *= require stylesheets/gallery
+    *= require stylesheets/layoutPageTemplate.css
   *
  */
