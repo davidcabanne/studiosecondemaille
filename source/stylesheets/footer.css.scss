@@ -2,13 +2,22 @@ footer {
   position: relative;
   width: 100%;
   background: var(--primary900);
+}
 
-  & .footerPanel {
-    width: 100%;
-    padding: var(--marginL) var(--marginS);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--marginM);
+.footerContactPannel {
+  padding: var(--marginXS) var(--marginS);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    border: var(--border-styles);
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: var(--marginS);
   }
 }
 
@@ -21,24 +30,41 @@ footer {
   gap: 4px;
   transition: color 100ms ease-in-out;
 }
+
 .footerContactPannel a .footerContactMail {
   text-decoration: underline;
 }
-.footerContactPannel a:hover {
-  color: var(--danger);
+
+@media screen and (min-width: 768px) {
+  .footerContactPannel a:hover {
+    color: var(--danger);
+  }
 }
+
 .footerNav {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 4px;
+  grid-template-columns: 1fr 1fr;
 }
+
 .footerNav li > a {
+  display: flex;
+  width: 100%;
+  height: 100%;
   font-weight: 500;
+  text-transform: uppercase;
   color: var(--secondary);
-  transition: color 100ms ease-in-out;
+  padding: var(--marginXS) var(--marginS);
+
+  @media screen and (max-width: 768px) {
+    padding: var(--marginS);
+  }
 }
-.footerNav li > a:hover {
-  color: var(--danger);
+
+@media screen and (min-width: 768px) {
+  .footerNav li:hover {
+    color: var(--light-010);
+    background: var(--light-001);
+  }
 }
 
 .footerLegal {

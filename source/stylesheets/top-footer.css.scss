@@ -25,6 +25,7 @@
     inset: 0;
     z-index: 10;
     border: var(--border-styles);
+    border-bottom: none;
     pointer-events: none;
   }
 

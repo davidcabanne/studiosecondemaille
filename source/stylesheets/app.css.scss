@@ -135,3 +135,9 @@ img {
     transform: translate(var(--x), var(--y));
   }
 }
+
+.layoutPageContainer {
+  margin-top: calc(var(--headerHeight));
+  padding: var(--marginS);
+  border: var(--border-styles);
+}
