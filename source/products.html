@@ -16,7 +16,7 @@
   {% endif %}
 
   <div class="productsContainer">
-    {% paginate products from products.current by theme.products_per_page %}
+    <!-- {% paginate products from products.current by theme.products_per_page %}
       {% if products.size == 1 %}
       <ul class="revealContainer">
         {% for product in products %}
@@ -45,8 +45,8 @@
       </ul>
        {% endif %}
       {% endpaginate %}
-    {% paginate products from products.current by theme.products_per_page %}
-    {% if products != blank and products.size > 1 %}
+    {% paginate products from products.current by theme.products_per_page %} -->
+    {% if products != blank and products.size > 0 %}
     <ul class="revealContainer">
       {% for product in products %}
       <li class="{{ product.css_class }} revealAnimationOpacity">

@@ -25,3 +25,4 @@
 //= require javascripts/handleLinkClick
 //= require javascripts/handleDescription
 //= require javascripts/handleMagnet
+//= require javascripts/handleZoomImage

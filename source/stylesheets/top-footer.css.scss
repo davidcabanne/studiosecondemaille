@@ -14,10 +14,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--primary);
-  color: white;
+  background: var(--light-009);
   padding: 128px 0px;
   overflow-x: hidden;
+
+  & svg {
+    fill: var(--primary);
+  }
 
   &::after {
     content: "";

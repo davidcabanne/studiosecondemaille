@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     handleDescription();
     handleMagnet();
     handleInputs();
+    handleZoomImage();
   } catch (error) {
     console.log(error);
   }
