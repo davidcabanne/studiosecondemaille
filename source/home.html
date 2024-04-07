@@ -59,17 +59,6 @@
   </div>
 
   <div class="section grid">
-    <!-- <div class="featuredMainItem">
-      {% for product in categories.featured.products limit: 1 %}
-      <a href="/product/{{ product.permalink }}" class="featuredItemLink">
-        <div class="placeholderBorder"></div>
-        <img src="{{ product.image | product_image_url }}" loading="lazy" />
-        <div class="featuredItemName boxBorder">
-          <h3>{{ product.name }}</h3>
-        </div>
-      </a>
-      {% endfor %}
-    </div> -->
     <div class="featuredMainItem">
       {% for product in categories.featured.products limit: 1 %}
       <a href="/product/{{ product.permalink }}" class="featuredItemLink">
@@ -89,17 +78,6 @@
       </a>
       {% endfor %}
     </div>
-    <!-- <div class="featuredSecondaryItems boxBorder">
-      {% for product in categories.featured.products offset: 1 limit: 2 %}
-      <a href="/product/{{ product.permalink }}" class="featuredItemLink">
-        <div class="placeholderBorder"></div>
-        <img src="{{ product.image | product_image_url }}" loading="lazy" />
-        <div class="featuredItemName boxBorder">
-          <h3>{{ product.name }}</h3>
-        </div>
-      </a>
-      {% endfor %}
-    </div> -->
     <div class="featuredSecondaryItems boxBorder">
       {% for product in categories.featured.products offset: 1 limit: 2 %}
       <a href="/product/{{ product.permalink }}" class="featuredItemLink">

@@ -49,27 +49,15 @@
         <h2>{{ product.name }}</h2>
 
         <div class="productDefaultPrice textLarge">
-          {% case product.status %} {% when 'sold-out' %}
           <h5>
             {{ product.default_price | money_with_sign }}
-            <em>Sold Out</em>
-          </h5>
-
-          {% when 'coming-soon' %}
-          <h5>
-            {{ product.default_price | money_with_sign }}
-            <em>Coming Soon</em>
-          </h5>
-
-          {% when 'active' %}
-          <h5>
-            {{ product.default_price | money_with_sign }} {% if product.on_sale
-            %}
-            <em>On Sale</em>
-            {% endif %}
+            <em>
+              {% case product.status %} {% when 'sold-out' %}Sold Out {% when
+              'coming-soon' %}Coming Soon {% when 'active' %} {% if
+              product.on_sale %}On Sale{% endif %} {% endcase %}
+            </em>
           </h5>
         </div>
-        {% if product.description != blank %}
         <div class="productDescription">
           <span class="productDescriptionTrigger">Description</span>
           <div class="productDescriptionContainer">
@@ -78,27 +66,31 @@
             </div>
           </div>
         </div>
-        {% endif %} {% endcase %}
       </div>
 
       <form method="post" action="/cart" class="productForm">
-        {% if product.has_default_option %} {{ product.option |
-        hidden_option_input }} {% else %}
-        <div class="productFormSelect">
-          {{ product.options_in_stock | options_select }}
-          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-            <g>
-              <line class="cls-1" x1="16" x2="7" y1="20.5" y2="11.5" />
-              <line class="cls-1" x1="25" x2="16" y1="11.5" y2="20.5" />
-            </g>
-          </svg>
-        </div>
-        {% endif %}
+        {% if product.options_in_stock.size > 1 %}
+          <div class="productFormSelect">
+            {{ product.options_in_stock | options_select }}
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <line class="cls-1" x1="16" x2="7" y1="20.5" y2="11.5" />
+                <line class="cls-1" x1="25" x2="16" y1="11.5" y2="20.5" />
+              </g>
+            </svg>
+          </div>
+          {% else %}
+            {% if product.has_default_option %} 
+              {{ product.option | hidden_option_input }} 
+            {% endif %}
+          {% endif %}
+
         <button
           name="submit"
           type="submit"
           title="Add to Cart"
-          class="boxBorder"
+          class="boxBorder{% if product.status == 'sold-out' %} disabledButton{% endif %}"
+          {% if product.status == 'sold-out' %}disabled{% endif %}
         >
           Add to Cart
           <svg

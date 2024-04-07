@@ -4,7 +4,6 @@
   margin-top: var(--marginXL);
   height: calc(100vh - 66px);
 
-
   @media (max-width: 768px) {
     height: 100%;
     display: flex;
@@ -28,6 +27,7 @@
       z-index: 0;
       scroll-snap-align: start;
       height: calc(100vh - 64px);
+      cursor: pointer;
 
       &::after {
         content: "";
@@ -131,6 +131,12 @@
   span {
     color: var(--light-005);
     text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    & a:hover {
+      color: var(--danger);
+    }
   }
 }
 
@@ -249,6 +255,11 @@
       transition-delay: 0ms, 0ms;
     }
 
+    &.disabledButton {
+      background: #9fa3ae;
+      cursor: not-allowed;
+    }
+
     @media (min-width: 768px) {
       &:hover {
         background: var(--danger);
@@ -256,6 +267,10 @@
         & svg {
           transform: translateX(4px);
           transition-delay: 0ms, 75ms;
+        }
+
+        &.disabledButton {
+          background: #9fa3ae;
         }
       }
     }
@@ -276,7 +291,6 @@
   transition: opacity 200ms ease-in-out;
   pointer-events: none;
   background-color: rgba(8, 6, 24, 0.25);
-
 
   & .fullScreenPlaceholder {
     width: 100vw;
