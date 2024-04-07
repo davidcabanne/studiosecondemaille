@@ -12,6 +12,10 @@
   height: calc(100vh - (64px * 2));
   width: 100%;
 
+  & .featuredItemLink {
+    height: calc(100vh - (64px * 2));
+  }
+
   & img {
     width: 100%;
     height: calc(100vh - (64px * 2));
@@ -51,33 +55,30 @@
   flex-direction: column;
   overflow: hidden;
 
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--primary);
-    opacity: 0;
-    pointer-events: none;
-    transition: 200ms ease-in-out;
-    transition-property: opacity;
-  }
+  & .homeProductPlaceholder {
+    position: relative;
+    width: 100%;
+    height: calc(50vh - 64px);
 
-  & img {
-    z-index: -1;
-    transition: 200ms ease-in-out;
-    transition-property: transform;
+    & :nth-child(2) {
+      opacity: 0;
+    }
+
+    & img {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      z-index: -1;
+      transition: 200ms ease-in-out;
+      transition-property: opacity, transform;
+    }
   }
 
   @media (min-width: 768px) {
     &:hover {
-      &::after {
-        opacity: .25;
+      & :nth-child(2) {
+        opacity: 1;
       }
-
-      & img {
-        transform: scale(1.025);
-      } 
-
       & .featuredItemName {
         background: var(--danger);
       }

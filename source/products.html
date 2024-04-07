@@ -52,11 +52,15 @@
       <li class="{{ product.css_class }} revealAnimationOpacity">
         <a href="{{ product.url }}">
           <div class="productPlaceholder boxBorder">
-            <img
-            alt="Image of {{ product.name | escape }}"
-            src="{{ product.image | product_image_url }}"
-          />
-          </div>
+              {% for image in product.images %}
+              {% if forloop.index == 1 or forloop.index == 2 %}
+                <img
+                  alt="Image of {{ product.name | escape }}"
+                  src="{{ image | product_image_url: 'original' }}"
+                />
+                {% endif %}
+              {% endfor %}
+            </div>
             <div class="productItemName boxBorder">
               <h3>{{ product.name }}</h3>
               {% comment %} <i>{{ product.default_price | money_with_sign }}</i> {% endcomment %}
