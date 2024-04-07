@@ -12,15 +12,13 @@
     {% endfor %}
   </div>
 
-  <div id="fullscreenModal" style="display: none">
-    <div id="closeModal" style="cursor: pointer">
-      <span>&times;</span>
+  <div id="fullscreenModal">
+    <div id="closeModal" class="boxBorder">
+      <span class="boxBorder">&times;</span>
     </div>
-    <img
-      id="fullscreenImage"
-      src=""
-      style="max-width: 100%; max-height: 100%"
-    />
+    <div class="fullScreenPlaceholder">
+      <img id="fullscreenImage" src="" />
+    </div>
   </div>
 
   <aside class="productPanel boxBorder">
