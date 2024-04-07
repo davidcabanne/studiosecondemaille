@@ -80,11 +80,16 @@
     }
 
     & li {
+      & .productPlaceholder {
+        & :nth-child(2) {
+          opacity: 0;
+        }
+      }
       @media (min-width: 768px) {
         &:hover {
           & .productPlaceholder {
             & :nth-child(2) {
-              opacity: 0;
+              opacity: 1;
             }
           }
 
