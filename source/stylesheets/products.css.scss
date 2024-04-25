@@ -8,6 +8,7 @@
   position: sticky;
   top: 64px;
   z-index: 10;
+  background: var(--light-008);
 
   @media (max-width: 768px) {
     position: relative;
@@ -84,6 +85,10 @@
         & :nth-child(2) {
           opacity: 0;
         }
+
+        @media (max-width: 768px) {
+          height: calc(100vh - 64px - 64px - 2px - (38px * 2));
+        }
       }
       @media (min-width: 768px) {
         &:hover {
@@ -106,7 +111,8 @@
       object-fit: cover;
 
       @media (max-width: 768px) {
-        height: calc(100vh - (64px + 64px + 64px + 64px + 2px));
+        height: calc(100vh - 64px - (38px * 2));
+        // height: calc(100vh - (64px + 64px + 64px + 64px + 2px));
       }
     }
   }

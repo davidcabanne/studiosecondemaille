@@ -45,6 +45,8 @@
 
   @media (max-width: 768px) {
     aspect-ratio: 16 / 9;
+    width: calc(100vw - 2px);
+    height: 100%;
     order: 2;
   }
 

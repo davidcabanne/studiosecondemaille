@@ -154,13 +154,17 @@
   justify-content: space-between;
   gap: var(--marginM);
   padding: var(--marginS);
+
+  @media screen and (max-width: 425px) {
+    flex-direction: row;
+  }
 }
 
 .cartProductDetailsMargin {
   align-items: end;
 
   @media screen and (max-width: 425px) {
-    align-items: start;
+    align-items: flex-start;
   }
 }
 
@@ -258,7 +262,12 @@
   gap: var(--marginXS);
 
   @media screen and (max-width: 425px) {
-    display: none;
+    order: 2;
+
+    & span {
+      display: none;
+
+    }
   }
 }
 
@@ -266,6 +275,8 @@
   font-size: 20px;
   transition: 200ms var(--animationStyle);
   transition-property: opacity;
+
+
 }
 
 .removeActionContainer .removeActionDetail {
